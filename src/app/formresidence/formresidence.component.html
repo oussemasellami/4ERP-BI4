@@ -1,0 +1,31 @@
+<form [formGroup]="f">
+  <div class="container">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">name</span>
+      </div>
+      <input type="text" aria-label="First name" class="form-control" formControlName="name" />
+    </div>
+
+    <div class="alert alert-danger" *ngIf="name!.touched && name!.invalid">
+name is required
+    </div>
+    <div class="alert alert-danger" *ngIf="name?.errors?.['minlength']">
+        name is minlength
+            </div>
+
+    <br />
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Address</span>
+      </div>
+      <input type="text" aria-label="First name" class="form-control" formControlName="address" />
+    </div>
+    <div class="alert alert-danger" *ngIf="f.get('address')?.errors?.['minlength']" >
+address minlength 3
+    </div>
+<br>
+    <button class="btn btn-primary" [disabled]="f.invalid" (click)="add()" >save</button>
+  </div>
+</form>
