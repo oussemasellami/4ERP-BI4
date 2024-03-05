@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Residence } from '../models/residence';
 import { Apartment } from '../models/apartment';
+import { ResidenceService } from '../services/residence.service';
 
 @Component({
   selector: 'app-residence',
@@ -14,6 +15,13 @@ export class ResidenceComponent {
   message:string=""
 imageurl="../assets/images/"
 searchsurface!:number
+
+constructor(private resservice:ResidenceService){}
+
+
+
+
+
   listResidences:Residence[]=[
     {id:1,"name": "El fel","address":"Borj Cedria", "image":this.imageurl+"residence1.jpg"},
      {id:2,"name": "El yasmine", "address":"Ezzahra","image":this.imageurl+"residence3.jpg"},
@@ -21,12 +29,15 @@ searchsurface!:number
      {id:4,"name": "El Anber","address":"Manzah 5", "image":this.imageurl+"residence1.jpg"}
    ];
    listApartments:Apartment[]=[
-    {id:1,"appartNum":1,"floorNum":0,"surface":100,"terrace":"oui","surfaceTerrace":20,"category":"S+1","description":"Appartement S+1","residence":this.listResidences[0] },
-    {id:2,"appartNum":2,"floorNum":0,"surface":130,"terrace":"non","surfaceTerrace":0,"category":"S+2","description":"Appartement S+2","residence":this.listResidences[0] },
+    {id:1,"appartNum":1,"floorNum":1,"surface":100,"terrace":"oui","surfaceTerrace":20,"category":"S+1","description":"Appartement S+1","residence":this.listResidences[0] },
+    {id:2,"appartNum":2,"floorNum":1,"surface":130,"terrace":"non","surfaceTerrace":0,"category":"S+2","description":"Appartement S+2","residence":this.listResidences[0] },
     {id:3,"appartNum":3,"floorNum":0,"surface":150,"terrace":"oui","surfaceTerrace":30,"category":"S+3","description":"Appartement S+3","residence":this.listResidences[1] }]
 
+somme!:number
+    getnumber(){
+      this.somme=this.resservice.getnumber1(this.listApartments,"floorNum",1)
 
-
+    }
 
 
 

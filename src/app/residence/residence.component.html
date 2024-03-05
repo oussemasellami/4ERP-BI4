@@ -17,6 +17,11 @@ to way data binding
 <input type="text" [(ngModel)]="message">
 {{message}}-->
 
+
+<button class="btn btn-danger"(click)="getnumber()">getnumber</button>
+<br>
+<div *ngIf="somme">la somme est:{{somme}}</div>
+<br>
 <table border="3">
     <tr>
         <td>Id</td>

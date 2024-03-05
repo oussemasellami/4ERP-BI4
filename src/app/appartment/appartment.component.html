@@ -1,0 +1,16 @@
+<button class="btn btn-primary" (click)="redirect()">add</button>
+<div class="row">
+  <div class="card m-3" style="width: 18rem" *ngFor="let i of listappart">
+    <img [src]="i.residence.image" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ i.appartNum }}</h5>
+      <p class="card-text">{{ i.description }}</p>
+      <button class="btn btn-danger" (click)="deleteappart(i.id)">
+        Delete
+      </button>
+      <button class="btn btn-primary" [routerLink]="['update', i.id]">
+        update
+      </button>
+    </div>
+  </div>
+</div>

@@ -15,7 +15,10 @@ import { ListannonceComponent } from './annonce/listannonce/listannonce.componen
 import { AnnoceModule } from './annonce/annoce.module';
 import { AnnoceRoutingModule } from './annonce/annoce-routing.module';
 import { FormresidenceComponent } from './formresidence/formresidence.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import { AppartmentComponent } from './appartment/appartment.component';
+import { AddappartComponent } from './addappart/addappart.component';
+import { UpdateappartComponent } from './updateappart/updateappart.component'
 
 
 
@@ -28,6 +31,9 @@ import { FormresidenceComponent } from './formresidence/formresidence.component'
     HomeComponent,
     NotfoundComponent,
     FormresidenceComponent,
+    AppartmentComponent,
+    AddappartComponent,
+    UpdateappartComponent,
     
   ],
   imports: [
@@ -35,7 +41,8 @@ import { FormresidenceComponent } from './formresidence/formresidence.component'
     FormsModule,
     AppRoutingModule,
     AnnoceModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
          
   ],
   providers: [],
